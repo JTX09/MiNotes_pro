@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  文件夹展开/收起图标
+-->
+<ImageView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/iv_expand_icon"
+    android:layout_width="24dp"
+    android:layout_height="24dp"
+    android:src="@android:drawable/ic_menu_more"
+    android:contentDescription="@string/folder_title"
+    android:layout_gravity="center_vertical" />

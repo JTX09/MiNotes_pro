@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Copyright (c) 2010-2011, The MiCode Open Source Community (www.micode.net)
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+    <color name="user_query_highlight">#335b5b5b</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="primary_color">#F7F7F7</color> <!-- Changed to match background for seamless look, or #263238 if we want dark header. User wants "Unified Frame". -->
+    <color name="on_primary_color">#212121</color>
+    <color name="background_color">#F7F7F7</color>
+    <color name="primary_text_dark">#212121</color>
+    <color name="secondary_text_dark">#757575</color>
+    <color name="fab_color">#FFC107</color>
+
+    <!-- Semantic Text Colors -->
+    <color name="text_color_primary">#212121</color>
+    <color name="text_color_secondary">#757575</color>
+
+    <!-- Note Background Colors -->
+    <color name="bg_yellow">#FFF8D6</color>
+    <color name="bg_blue">#E3F2FD</color>
+    <color name="bg_white">#FFFFFF</color>
+    <color name="bg_green">#E0F2F1</color>
+    <color name="bg_red">#FCE4EC</color>
+
+    <!-- New Presets -->
+    <color name="bg_midnight_black">#212121</color>
+    <color name="bg_eye_care_green">#C7EDCC</color>
+    <color name="bg_warm">#FFE0B2</color>
+    <color name="bg_cool">#E1BEE7</color>
+
+    <!-- Modern Presets -->
+    <color name="preset_sunset_start">#FF512F</color>
+    <color name="preset_sunset_end">#DD2476</color>
+    <color name="preset_ocean_start">#2193B0</color>
+    <color name="preset_ocean_end">#6DD5ED</color>
+    <color name="preset_forest_start">#11998E</color>
+    <color name="preset_forest_end">#38EF7D</color>
+    <color name="preset_lavender_start">#834D9B</color>
+    <color name="preset_lavender_end">#D04ED6</color>
+
+    <!-- Drawer Header Colors - Material Design 3 Blue Theme -->
+    <color name="drawer_header_gradient_start">#1976D2</color>
+    <color name="drawer_header_gradient_center">#2196F3</color>
+    <color name="drawer_header_gradient_end">#64B5F6</color>
+    <color name="drawer_online_status">#4CAF50</color>
+    <color name="drawer_sync_status_bg">#1AFFFFFF</color>
+</resources>

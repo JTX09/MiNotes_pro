@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/tv_folder_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp"
+    android:layout_marginEnd="8dp"
+    android:text="Folder"
+    android:textSize="14sp"
+    android:textColor="@color/text_color_primary"
+    android:background="@drawable/folder_tab_bg_selector"
+    android:fontFamily="sans-serif-medium" />

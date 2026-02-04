@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  多选模式的Toolbar布局
+  包含删除、移动按钮
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_delete"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:title="@string/menu_delete"
+        android:showAsAction="always"
+        android:orderInCategory="1" />
+
+    <item
+        android:id="@+id/action_move"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:title="@string/menu_move"
+        android:showAsAction="always"
+        android:orderInCategory="2" />
+
+</menu>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingVertical="6dp"
+    android:paddingEnd="8dp"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:id="@+id/btn_restore"
+        android:tag="restore"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="4dp"
+        android:background="@drawable/swipe_button_bg"
+        android:backgroundTint="#E3F2FD"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true">
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_sync"
+            app:tint="#1976D2" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="恢复"
+            android:textSize="10sp"
+            android:textColor="#1976D2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_permanent_delete"
+        android:tag="permanent_delete"
+        android:layout_width="80dp"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="4dp"
+        android:background="@drawable/swipe_button_bg"
+        android:backgroundTint="#FFEBEE"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true">
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_delete"
+            app:tint="#C62828" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="永久删除"
+            android:textSize="10sp"
+            android:textColor="#C62828" />
+    </LinearLayout>
+
+</LinearLayout>

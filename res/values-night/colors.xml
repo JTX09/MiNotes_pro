@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background_color">#121212</color>
+    <color name="text_color_primary">#DEFFFFFF</color>
+    <color name="text_color_secondary">#99FFFFFF</color>
+    
+    <!-- In Night mode, keeping note backgrounds desaturated/dark is better, 
+         but for now we keep them linked to original resources unless we want to override them.
+         We override bg_white to be dark grey for general UI usage (if any). -->
+    <color name="bg_white">#2C2C2C</color> 
+    
+    <!-- Overriding primary_text_dark to ensure legacy styles also switch if they are not updated -->
+    <color name="primary_text_dark">#DEFFFFFF</color>
+    <color name="secondary_text_dark">#99FFFFFF</color>
+</resources>

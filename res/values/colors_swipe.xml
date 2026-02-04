@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 滑动按钮颜色 -->
+    <color name="swipe_edit_bg">#2196F3</color>    <!-- 蓝色 -->
+    <color name="swipe_pin_bg">#FF9800</color>     <!-- 橙色 -->
+    <color name="swipe_move_bg">#4CAF50</color>    <!-- 绿色 -->
+    <color name="swipe_delete_bg">#F44336</color>  <!-- 红色 -->
+    <color name="swipe_restore_bg">#2196F3</color> <!-- 蓝色 -->
+    <color name="swipe_permanent_bg">#F44336</color> <!-- 红色 -->
+</resources>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  侧栏布局文件
+  包含文件夹树、菜单项、操作栏和回收站入口
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/sidebar_container"
+    android:layout_width="280dp"
+    android:layout_height="match_parent"
+    android:layout_gravity="start"
+    android:orientation="vertical"
+    android:background="@color/bg_white"
+    android:elevation="8dp">
+
+    <!-- 操作栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        android:background="@color/bg_white"
+        android:elevation="4dp">
+
+        <!-- 关闭按钮 -->
+        <ImageButton
+            android:id="@+id/btn_close_sidebar"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="关闭侧栏"
+            android:padding="8dp"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:tint="@color/text_color_primary" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <!-- 创建文件夹按钮 -->
+        <ImageButton
+            android:id="@+id/btn_create_folder"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="创建文件夹"
+            android:padding="8dp"
+            android:src="@android:drawable/ic_input_add"
+            android:tint="@color/text_color_primary" />
+    </LinearLayout>
+
+    <!-- 分隔线 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
+    <!-- 根文件夹（始终显示） -->
+    <TextView
+        android:id="@+id/tv_root_folder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:drawableStart="@android:drawable/ic_menu_myplaces"
+        android:drawablePadding="12dp"
+        android:text="@string/root_folder_name"
+        android:textSize="16sp"
+        android:textColor="@color/text_color_primary"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center_vertical" />
+
+    <!-- 分隔线 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
+    <!-- 文件夹树列表 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_folder_tree"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:clipToPadding="false" />
+
+    <!-- 分隔线 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
+    <!-- 菜单项 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- 同步 -->
+        <TextView
+            android:id="@+id/menu_sync"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:drawableStart="@android:drawable/ic_menu_upload"
+            android:drawablePadding="12dp"
+            android:text="@string/menu_sync"
+            android:textSize="16sp"
+            android:textColor="@color/text_color_primary"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical" />
+
+        <!-- 登录 -->
+        <TextView
+            android:id="@+id/menu_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:drawableStart="@android:drawable/ic_lock_lock"
+            android:drawablePadding="12dp"
+            android:text="@string/menu_login"
+            android:textSize="16sp"
+            android:textColor="@color/text_color_primary"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical" />
+
+        <!-- 导出 -->
+        <TextView
+            android:id="@+id/menu_export"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:drawableStart="@android:drawable/ic_menu_save"
+            android:drawablePadding="12dp"
+            android:text="@string/menu_export"
+            android:textSize="16sp"
+            android:textColor="@color/text_color_primary"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical" />
+
+        <!-- 模板 -->
+        <TextView
+            android:id="@+id/menu_templates"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:drawableStart="@android:drawable/ic_menu_edit"
+            android:drawablePadding="12dp"
+            android:text="@string/menu_templates"
+            android:textSize="16sp"
+            android:textColor="@color/text_color_primary"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical" />
+
+        <!-- 设置 -->
+        <TextView
+            android:id="@+id/menu_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:drawableStart="@android:drawable/ic_menu_preferences"
+            android:drawablePadding="12dp"
+            android:text="@string/menu_settings"
+            android:textSize="16sp"
+            android:textColor="@color/text_color_primary"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center_vertical" />
+    </LinearLayout>
+
+    <!-- 分隔线 -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
+    <!-- 回收站（固定底部） -->
+    <TextView
+        android:id="@+id/menu_trash"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:drawableStart="@android:drawable/ic_menu_delete"
+        android:drawablePadding="12dp"
+        android:text="@string/menu_trash"
+        android:textSize="16sp"
+        android:textColor="@color/text_color_primary"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center_vertical" />
+</LinearLayout>

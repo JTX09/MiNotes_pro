@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Notesmaster" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorOnPrimary">@color/on_primary_color</item>
+        <item name="android:statusBarColor">@color/primary_color</item>
+        <!-- 强制背景为白色，防止深色模式下黑屏 -->
+        <item name="android:colorBackground">@color/background_color</item>
+        <item name="android:windowBackground">@color/background_color</item>
+        <!-- 透明导航栏，支持edge-to-edge显示 -->
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <!-- 根据内容自动调整状态栏图标颜色（深色背景=浅色图标） -->
+        <item name="android:windowLightStatusBar">false</item>
+        <!-- Preference Theme for SettingsFragment -->
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+    </style>
+
+    <style name="Theme.Notesmaster" parent="Base.Theme.Notesmaster" />
+
+    <!-- NoteEditActivity使用的主题：统一使用Material3风格 -->
+    <style name="Theme.Notesmaster.Edit" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary_color</item>
+        <item name="colorOnPrimary">@color/on_primary_color</item>
+        <item name="android:statusBarColor">@color/primary_color</item>
+        <!-- 确保背景色适配深色模式，虽然会被便签背景覆盖 -->
+        <item name="android:colorBackground">@color/background_color</item>
+        <item name="android:windowBackground">@color/background_color</item>
+    </style>
+</resources>

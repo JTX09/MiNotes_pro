@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Navigation Drawer Menu - Simplified
+  移除分隔线，简化菜单项
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- ========== 笔记相关 ========== -->
+    <group
+        android:id="@+id/group_notes"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_all_notes"
+            android:icon="@drawable/ic_notes"
+            android:title="@string/drawer_all_notes"
+            android:checked="true" />
+
+        <item
+            android:id="@+id/nav_trash"
+            android:icon="@drawable/ic_delete"
+            android:title="@string/menu_trash" />
+
+    </group>
+
+    <!-- ========== 文件夹（可折叠）========== -->
+    <group
+        android:id="@+id/group_folders"
+        android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/nav_folders"
+            android:icon="@android:drawable/ic_menu_more"
+            android:title="@string/folder_title"
+            app:actionLayout="@layout/drawer_folder_expand_icon" />
+
+    </group>
+
+    <!-- ========== 云同步 ========== -->
+    <group
+        android:id="@+id/group_sync"
+        android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/nav_sync_settings"
+            android:icon="@drawable/ic_cloud_settings"
+            android:title="@string/drawer_sync_settings" />
+
+    </group>
+
+    <!-- ========== 其他 ========== -->
+    <group
+        android:id="@+id/group_other"
+        android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/nav_templates"
+            android:icon="@drawable/ic_template"
+            android:title="@string/menu_templates" />
+
+        <item
+            android:id="@+id/nav_export"
+            android:icon="@drawable/ic_export"
+            android:title="@string/menu_export" />
+
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/menu_settings" />
+
+    </group>
+
+    <!-- ========== 账户操作 ========== -->
+    <group
+        android:id="@+id/group_account"
+        android:checkableBehavior="none">
+
+        <item
+            android:id="@+id/nav_login"
+            android:icon="@drawable/ic_login"
+            android:title="@string/drawer_login" />
+
+        <item
+            android:id="@+id/nav_logout"
+            android:icon="@drawable/ic_logout"
+            android:title="@string/drawer_logout"
+            android:visible="false" />
+
+    </group>
+
+</menu>

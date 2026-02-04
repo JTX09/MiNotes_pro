@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.Material3.ActionBar">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:popupTheme="@style/ThemeOverlay.Material3.Light">
+
+            <!-- 搜索框 -->
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/search_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionSearch|flagNoExtractUi"
+                app:iconifiedByDefault="false"
+                app:queryHint="@string/search_hint" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- 历史记录按钮 -->
+        <TextView
+            android:id="@+id/btn_show_history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:padding="16dp"
+            android:text="@string/search_history_title"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="16sp"
+            android:drawablePadding="8dp"
+            android:visibility="gone"
+            app:drawableEndCompat="@android:drawable/arrow_down_float" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- 搜索结果列表 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:scrollbars="vertical" />
+
+    <!-- 无结果提示 -->
+    <TextView
+        android:id="@+id/tv_no_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/search_no_results"
+        android:visibility="gone"
+        android:textSize="16sp"
+        android:textColor="?android:attr/textColorSecondary" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

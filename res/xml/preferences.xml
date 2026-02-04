@@ -1,0 +1,62 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="通用">
+        <ListPreference
+            android:key="pref_theme_mode"
+            android:title="主题模式"
+            android:entries="@array/theme_entries"
+            android:entryValues="@array/theme_values"
+            android:defaultValue="system" />
+            
+        <ListPreference
+            android:key="pref_font_size"
+            android:title="@string/menu_font_size"
+            android:entries="@array/font_size_entries"
+            android:entryValues="@array/font_size_values"
+            android:defaultValue="1" />
+
+        <SwitchPreferenceCompat
+            android:key="pref_key_bg_random_appear"
+            android:title="@string/preferences_bg_random_appear_title"
+            android:defaultValue="false" />
+            
+        <ListPreference
+            android:key="pref_language"
+            android:title="@string/preferences_language_title"
+            android:entries="@array/language_entries"
+            android:entryValues="@array/language_values"
+            android:defaultValue="zh-CN" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="安全">
+        <Preference
+            android:key="pref_key_security"
+            android:title="笔记加锁"
+            android:summary="设置或更改笔记访问密码" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="全局速记胶囊">
+        <SwitchPreferenceCompat
+            android:key="pref_key_capsule_enable"
+            android:title="@string/preferences_capsule_title"
+            android:summary="@string/preferences_capsule_summary"
+            android:defaultValue="false" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="数据管理">
+        <Preference
+            android:key="pref_key_cloud_sync"
+            android:title="@string/sync_title"
+            android:summary="@string/sync_auto_sync" />
+            
+        <Preference
+            android:key="pref_key_export_notes"
+            android:title="@string/menu_export_text"
+            android:summary="将笔记导出为文本文件保存到存储卡" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="关于">
+        <Preference
+            android:title="版本"
+            android:summary="1.1.0" />
+    </PreferenceCategory>
+</PreferenceScreen>

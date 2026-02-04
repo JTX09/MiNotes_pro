@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  多选模式的Toolbar菜单
+  包含删除、移动、取消选项
+-->
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/multi_select_delete"
+        android:icon="@android:drawable/ic_menu_delete"
+        android:title="@string/menu_delete"
+        android:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/multi_select_move"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        android:title="@string/menu_move"
+        android:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/multi_select_pin"
+        android:icon="@android:drawable/ic_menu_upload"
+        android:title="@string/menu_pin"
+        android:showAsAction="always" />
+
+    <item
+        android:id="@+id/multi_select_lock"
+        android:icon="@android:drawable/ic_lock_lock"
+        android:title="@string/menu_lock"
+        android:showAsAction="ifRoom" />
+
+</menu>

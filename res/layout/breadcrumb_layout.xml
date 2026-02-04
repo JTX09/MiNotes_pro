@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  面包屑导航布局
+  显示当前文件夹路径，支持点击跳转和长按重命名
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/breadcrumb_container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingHorizontal="16dp"
+    android:paddingVertical="8dp"
+    android:background="@android:color/white"
+    android:gravity="center_vertical">
+
+    <!-- 面包屑项容器（动态添加） -->
+    <LinearLayout
+        android:id="@+id/breadcrumb_items"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:gravity="center_vertical" />
+
+    <!-- 文件夹图标 -->
+    <ImageView
+        android:id="@+id/iv_folder_icon"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:src="@android:drawable/ic_menu_myplaces"
+        android:contentDescription="文件夹"
+        android:visibility="gone" />
+
+</LinearLayout>

@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">便籤</string>
+    <string name="app_widget2x2">便籤 2x2</string>
+    <string name="app_widget4x4">便籤 4x4</string>
+    <string name="widget_havenot_content">沒有關聯內容，點擊新建便籤。</string>
+    <string name="widget_under_visit_mode">訪客模式下，便籤內容不可見</string>
+    <string name="notelist_string_info">...</string>
+    <string name="notelist_menu_new">新建便籤</string>
+    <string name="delete_remind_time_message">成功刪除提醒</string>
+    <string name="set_remind_time_message">創建提醒</string>
+    <string name="note_alert_expired">已過期</string>
+    <string name="format_date_ymd">yyyyMMdd</string>
+    <string name="format_datetime_mdhm">MM月dd日 kk:mm</string>
+    <string name="notealert_ok">知道了</string>
+    <string name="notealert_enter">查看</string>
+    <string name="note_link_tel">呼叫電話</string>
+    <string name="note_link_email">發送郵件</string>
+    <string name="note_link_web">瀏覽網頁</string>
+    <string name="note_link_other">打開地圖</string>
+    <string name="note_link_time">創建鬧鐘</string>
+    <string name="note_link_geo">查看地圖</string>
+    <!-- Text export file information -->
+    <string name="file_path" translatable="false">/MIUI/notes/</string>
+    <string name="file_name_txt_format" translatable="false">notes_%s.txt</string>
+    <!-- notes list string -->
+    <string name="format_folder_files_count" translatable="false">(%d)</string>
+    <string name="menu_create_folder">新建文件夾</string>
+    <string name="menu_export_text">導出文本</string>
+    <string name="menu_sync">同步</string>
+    <string name="menu_sync_cancel">取消同步</string>
+    <string name="menu_setting">設置</string>
+    <string name="menu_search">搜索</string>
+    <string name="menu_delete">刪除</string>
+    <string name="menu_move">移動到文件夾</string>
+    <string name="menu_rename">重命名</string>
+    <string name="menu_select_title">選中了 %d 項</string>
+    <string name="menu_select_none">沒有選中項，操作無效</string>
+    <string name="menu_select_all">全選</string>
+    <string name="menu_deselect_all">取消全選</string>
+    <string name="menu_font_size">文字大小</string>
+    <string name="menu_font_small">小</string>
+    <string name="menu_font_normal">正常</string>
+    <string name="menu_font_large">大</string>
+    <string name="menu_font_super">超大</string>
+    <string name="menu_list_mode">進入清單模式</string>
+    <string name="menu_normal_mode">退出清單模式</string>
+    <string name="menu_folder_view">查看文件夾</string>
+    <string name="menu_folder_delete">刪除文件夾</string>
+    <string name="menu_folder_change_name">修改文件夾名稱</string>
+    <string name="folder_exist">文件夾 %1$s 已存在，請重新命名</string>
+    <string name="menu_tasks">待辦事項</string>
+
+    <!-- Folder operation dialogs -->
+    <string name="dialog_rename_folder_title">重命名文件夾</string>
+    <string name="dialog_delete_folder_title">刪除文件夾</string>
+    <string name="dialog_delete_folder_with_notes">刪除 \"%1$s\" 及其 %2$d 條筆記?</string>
+    <string name="dialog_delete_folder_empty">刪除 \"%1$s\"?</string>
+    <string name="folder_name_hint">文件夾名稱</string>
+    <string name="menu_share">分享</string>
+    <string name="menu_send_to_desktop">發送到桌面</string>
+    <string name="menu_alert">提醒我</string>
+    <string name="menu_remove_remind">刪除提醒</string>
+    <string name="menu_title_select_folder">選擇文件夾</string>
+    <string name="menu_move_parent_folder">上一級文件夾</string>
+    <string name="info_note_enter_desktop">已添加到桌面</string>
+    <string name="alert_message_delete_folder">確認刪除文件夾及所包含的便籤嗎？</string>
+    <string name="alert_title_delete">刪除所選便籤</string>
+    <string name="alert_message_delete_notes">確認要刪除所選的 %d 條便籤嗎?</string>
+    <string name="alert_message_delete_note">確認要刪除該條便籤嗎?</string>
+    <string name="format_move_notes_to_folder">已將所選 %1$d 條便籤移到 %2$s 文件夾</string>
+    <!-- Error information -->
+    <string name="error_sdcard_unmounted">SD卡被佔用，不能操作</string>
+    <string name="error_sdcard_export">導出文本時發生錯誤，請檢查SD卡</string>
+    <string name="error_note_not_exist">要查看的便籤不存在</string>
+    <string name="error_note_empty_for_clock">不能空便籤設置鬧鐘提醒</string>
+    <string name="error_note_empty_for_send_to_desktop">不能將空便籤發送到桌面</string>
+    <string name="error_intent_invalid">無效的意圖</string>
+    <string name="error_intent_unsupported">不支持的意圖操作</string>
+    <string name="success_sdcard_export">導出成功</string>
+    <string name="failed_sdcard_export">導出失敗</string>
+    <string name="format_exported_file_location">已將文本文件(%1$s)輸出至SD卡(%2$s)目錄</string>
+    <!-- Sync -->
+    <string name="ticker_syncing">同步便籤...</string>
+    <string name="ticker_success">同步成功</string>
+    <string name="ticker_fail">同步失敗</string>
+    <string name="ticker_cancel">同步已取消</string>
+    <string name="success_sync_account">與%1$s同步成功</string>
+    <string name="error_sync_network">同步失敗，請檢查網絡和帳號設置</string>
+    <string name="error_sync_internal">同步失敗，發生內部錯誤</string>
+    <string name="error_sync_cancelled">同步已取消</string>
+    <string name="sync_progress_login">登錄%1$s...</string>
+    <string name="sync_progress_init_list">正在獲取服務器便籤列表...</string>
+    <!-- Preferences -->
+    <string name="preferences_title">設置</string>
+    <string name="preferences_last_sync_time_format" translatable="false">yyyy-MM-dd hh:mm:ss</string>
+    <string name="preferences_button_sync_immediately">立即同步</string>
+    <string name="preferences_button_sync_cancel">取消同步</string>
+    <string name="preferences_bg_random_appear_title">新建便籤背景顏色隨機</string>
+    <string name="preferences_language_title">語言</string>
+    <string name="folder_all">所有</string>
+    <string name="folder_all_templates">所有模板</string>
+    <string name="folder_uncategorized">未分類</string>
+
+    <string name="button_delete">刪除</string>
+    <string name="call_record_folder_name">通話便籤</string>
+    <string name="hint_foler_name">請輸入名稱</string>
+
+    <string name="search_label">正在搜索便籤</string>
+    <string name="search_hint">搜索便籤</string>
+    <string name="search_setting_description">便籤中的文字</string>
+    <string name="search">便籤</string>
+    <string name="datetime_dialog_ok">設置</string>
+    <string name="datetime_dialog_cancel">取消</string>
+    <plurals name="search_results_title">
+        <item quantity="other"><xliff:g id="NUMBER">%1$s</xliff:g> 條符合"<xliff:g id="SEARCH">%2$s</xliff:g>"的搜索結果</item>
+    </plurals>
+
+    <string name="empty_notes_hint">暫無便籤，點擊右下角按鈕創建</string>
+    <string name="empty_notes_icon">空便籤圖標</string>
+    <string name="menu_edit_note">編輯便籤</string>
+    <!-- Sidebar strings -->
+    <string name="menu_login">登錄</string>
+    <string name="menu_export">導出</string>
+    <string name="menu_templates">模板</string>
+    <string name="menu_settings">設置</string>
+    <string name="menu_trash">回收站</string>
+    <string name="root_folder_name">我的便籤</string>
+    <string name="sidebar_close">關閉側邊欄</string>
+    <string name="sidebar_create_folder">創建文件夾</string>
+    <string name="folder_note_count">%d 個便籤</string>
+    <string name="dialog_create_folder_title">創建文件夾</string>
+    <string name="dialog_create_folder_hint">文件夾名稱</string>
+    <string name="error_folder_name_empty">文件夾名稱不能為空</string>
+    <string name="error_folder_name_too_long">文件夾名稱過長（最多50個字符）</string>
+    <string name="error_folder_name_exists">文件夾已存在</string>
+    <string name="create_folder_success">創建文件夾成功</string>
+    <string name="menu_pin">置頂</string>
+    <string name="menu_lock">鎖定</string>
+    <string name="lock_confirmation">確定需要為其上鎖？</string>
+    <string name="lock_confirm_button">確定</string>
+    <string name="lock_cancel_button">再想想</string>
+
+    <string name="delete_confirmation">確定要刪除選中的便籤嗎？</string>
+    <string name="menu_unpin">取消置頂</string>
+    <string name="menu_unlock">解鎖</string>
+    
+    <!-- Search related -->
+    <string name="search_no_results">未找到結果</string>
+    <string name="search_history_title">搜索歷史</string>
+    <string name="search_history_clear">清空</string>
+
+    <!-- Undo/Redo -->
+    <string name="menu_undo">撤銷</string>
+    <string name="menu_redo">重做</string>
+    <string name="menu_clear_history">清空撤銷歷史</string>
+    <string name="undo_success">撤銷成功</string>
+    <string name="redo_success">重做成功</string>
+    <string name="undo_fail">無可撤銷內容</string>
+    <string name="redo_fail">無可重做內容</string>
+    <string name="menu_save_as_template">保存為模板</string>
+    <string name="menu_picture">圖片</string>
+    <string name="menu_rich_text">富文本</string>
+
+    <!-- Capsule Feature -->
+    <string name="accessibility_service_description">小米便籤全局速記服務。開啟後請勿開啟“無障礙快捷方式”，以免出現多餘的系統懸浮按鈕。</string>
+    <string name="capsule_permission_alert_window_title">需要懸浮窗權限</string>
+    <string name="capsule_permission_alert_window_message">全局速記膠囊需要懸浮窗權限才能顯示在其他應用上層。</string>
+    <string name="capsule_permission_accessibility_title">需要無障礙服務權限</string>
+    <string name="capsule_permission_accessibility_message">全局速记胶囊需要无障碍服务权限来监听剪贴板和获取来源应用。</string>
+    <string name="preferences_capsule_title">全局速記膠囊</string>
+    <string name="preferences_capsule_summary">開啟側邊懸浮膠囊，支持跨應用拖拽和剪貼板速記</string>
+    <string name="menu_restore">恢復</string>
+    <string name="menu_permanent_delete">永久刪除</string>
+
+    <!-- Drawer Navigation -->
+    <string name="drawer_login_prompt">點擊登錄/註冊</string>
+    <string name="drawer_default_username">用戶</string>
+    <string name="drawer_default_device_id">設備 ID: 未知</string>
+    <string name="drawer_sync_status_synced">已同步</string>
+    <string name="drawer_sync_status_syncing">同步中...</string>
+    <string name="drawer_sync_status_failed">同步失敗</string>
+    <string name="drawer_group_notes">筆記</string>
+    <string name="drawer_group_sync">雲同步</string>
+    <string name="drawer_group_other">其他</string>
+    <string name="drawer_all_notes">全部筆記</string>
+    <string name="drawer_favorites">收藏</string>
+    <string name="drawer_reminders">提醒</string>
+    <string name="drawer_sync_now">立即同步</string>
+    <string name="drawer_sync_settings">同步設置</string>
+    <string name="drawer_help">幫助與反饋</string>
+    <string name="drawer_login">登錄</string>
+    <string name="drawer_logout">退出登錄</string>
+
+    <!-- Cloud Sync -->
+    <string name="sync_title">雲同步</string>
+    <string name="sync_login_status">登錄狀態</string>
+    <string name="sync_device_id_default">設備 ID: 未初始化</string>
+    <string name="sync_auto_sync">自動同步</string>
+    <string name="sync_last_time">最後同步時間:</string>
+    <string name="sync_never">從不</string>
+    <string name="sync_status_label">同步狀態:</string>
+    <string name="sync_status_idle">空閒</string>
+    <string name="sync_status_syncing">同步中...</string>
+    <string name="sync_status_success">同步成功</string>
+    <string name="sync_status_failed">同步失敗</string>
+    <string name="sync_button_now">立即同步</string>
+    <string name="sync_toast_started">同步已開始</string>
+    <string name="sync_toast_success">同步成功完成</string>
+    <string name="sync_toast_failed">同步失敗: %1$s</string>
+
+    <!-- Logout -->
+    <string name="dialog_logout_title">退出登錄</string>
+    <string name="dialog_logout_message">確定要退出登錄嗎？退出後本地筆記將保留，但無法同步到雲端。</string>
+    <string name="dialog_logout_confirm">退出</string>
+    <string name="toast_logout_success">已退出登錄</string>
+
+    <!-- Folder -->
+    <string name="folder_title">文件夾</string>
+    <string name="error_create_folder">創建文件夾失敗</string>
+
+    <!-- Conflict Resolution -->
+    <string name="conflict_title">筆記衝突</string>
+    <string name="conflict_local_version">本地版本</string>
+    <string name="conflict_cloud_version">雲端版本</string>
+    <string name="conflict_use_local">使用本地</string>
+    <string name="conflict_use_cloud">使用雲端</string>
+    <string name="conflict_merge">合併</string>
+    <string name="conflict_merge_hint">合併功能即將推出</string>
+</resources>

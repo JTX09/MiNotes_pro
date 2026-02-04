@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="font_family_entries">
+        <item>System Default</item>
+        <item>Serif</item>
+        <item>Sans Serif</item>
+        <item>Monospace</item>
+        <item>Cursive</item>
+    </string-array>
+    <string-array name="font_family_values">
+        <item>default</item>
+        <item>serif</item>
+        <item>sans-serif</item>
+        <item>monospace</item>
+        <item>cursive</item>
+    </string-array>
+</resources>

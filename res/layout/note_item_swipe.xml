@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<net.micode.notes.ui.SwipeMenuLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- 内容视图（使用 CardView 实现圆角卡片样式） -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/content_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="2dp"
+        app:cardBackgroundColor="@color/bg_white">
+
+        <LinearLayout
+            android:id="@+id/content_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+        <!-- 标题行 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <!-- 类型图标（文件夹/便签） -->
+            <ImageView
+                android:id="@+id/iv_type_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginEnd="8dp"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="16sp"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="end"
+                android:singleLine="true" />
+
+            <ImageView
+                android:id="@+id/iv_lock_icon"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="4dp"
+                android:src="@android:drawable/ic_lock_lock"
+                app:tint="@android:color/darker_gray"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/tv_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:textSize="12sp"
+                android:textColor="@android:color/darker_gray" />
+        </LinearLayout>
+
+        <!-- 文件夹名称 -->
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textSize="14sp"
+            android:textColor="@android:color/darker_gray"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:visibility="gone" />
+
+        <!-- 底部控制行：复选框和提醒图标 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <CheckBox
+                android:id="@android:id/checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="false"
+                android:clickable="false"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/iv_alert_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:visibility="gone" />
+
+            <!-- 填充空间 -->
+            <View
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+
+            <ImageView
+                android:id="@+id/iv_pinned_icon"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@android:drawable/ic_menu_upload"
+                app:tint="@android:color/darker_gray"
+                android:visibility="gone" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+    <!-- 操作按钮视图（包含普通和回收站两个菜单） -->
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="6dp">
+
+        <!-- 普通模式菜单 -->
+        <include
+            android:id="@+id/swipe_menu_normal"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            layout="@layout/swipe_menu_note"
+            android:visibility="gone" />
+
+        <!-- 回收站模式菜单 -->
+        <include
+            android:id="@+id/swipe_menu_trash"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            layout="@layout/swipe_menu_trash"
+            android:visibility="gone" />
+    </FrameLayout>
+
+</net.micode.notes.ui.SwipeMenuLayout>

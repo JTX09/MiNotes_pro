@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingVertical="6dp"
+    android:paddingEnd="8dp"
+    android:gravity="center_vertical">
+
+    <LinearLayout
+        android:id="@+id/btn_edit"
+        android:tag="edit"
+        android:layout_width="56dp"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="4dp"
+        android:background="@drawable/swipe_button_bg"
+        android:backgroundTint="#E3F2FD"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true">
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_edit"
+            app:tint="#1976D2" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="编辑"
+            android:textSize="10sp"
+            android:textColor="#1976D2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_pin"
+        android:tag="pin"
+        android:layout_width="56dp"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="4dp"
+        android:background="@drawable/swipe_button_bg"
+        android:backgroundTint="#FFF3E0"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true">
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@android:drawable/ic_menu_upload"
+            app:tint="#EF6C00" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="置顶"
+            android:textSize="10sp"
+            android:textColor="#EF6C00" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_move"
+        android:tag="move"
+        android:layout_width="56dp"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="4dp"
+        android:background="@drawable/swipe_button_bg"
+        android:backgroundTint="#E8F5E9"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true">
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_folder"
+            app:tint="#2E7D32" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="移动"
+            android:textSize="10sp"
+            android:textColor="#2E7D32" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_delete"
+        android:tag="delete"
+        android:layout_width="56dp"
+        android:layout_height="match_parent"
+        android:layout_marginHorizontal="4dp"
+        android:background="@drawable/swipe_button_bg"
+        android:backgroundTint="#FFEBEE"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:clickable="true"
+        android:focusable="true">
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_delete"
+            app:tint="#C62828" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="删除"
+            android:textSize="10sp"
+            android:textColor="#C62828" />
+    </LinearLayout>
+
+</LinearLayout>
