@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Android应用清单文件：定义应用的基本信息、权限、组件等 -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- ==================== 对于功能的声明 ==================== -->
+    <!-- 允许显示悬浮窗 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!-- 允许写入外部存储，用于保存笔记数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 允许在桌面创建快捷方式 -->
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <!-- 允许访问网络，用于同步功能 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 允许读取联系人，可能与笔记关联联系人功能相关 -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!-- 允许管理账户，用于账户同步功能 -->
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <!-- 允许验证账户，用于账户同步功能 -->
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" />
+    <!-- 允许获取设备上的账户列表 -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <!-- 允许使用账户凭据 -->
+    <uses-permission android:name="android.permission.USE_CREDENTIALS" />
+    <!-- 允许接收系统启动完成广播，用于初始化闹钟 -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- 允许设置闹钟 -->
+    <uses-permission android:name="com.android.alarm.permission.SET_ALARM" />
+    <uses-permission android:name="android.permission.SET_ALARM" />
+
+    <!-- 允许在 Android 11+ 上查询外部应用 -->
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.SET_ALARM" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="geo" />
+        </intent>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+            <data android:scheme="https" />
+        </intent>
+    </queries>
+
+    <!-- 阿里云推送服务权限 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <!-- ==================== 应用配置 ==================== -->
+    <application
+        android:name=".NotesApplication"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Notesmaster"
+        android:requestLegacyExternalStorage="true"
+        tools:targetApi="31">
+
+        <!-- ==================== 笔记列表活动 ==================== -->
+        <!-- 应用主入口，显示所有笔记列表 -->
+        <activity
+            android:name=".ui.NotesListActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:label="@string/app_name"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.Notesmaster"
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:windowSoftInputMode="adjustPan"
+            android:exported="true">
+
+            <!-- 意图过滤器：定义此活动为应用启动入口 -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- ==================== 笔记编辑活动 ==================== -->
+        <!-- 用于查看、编辑和搜索笔记 -->
+        <activity
+            android:name=".ui.NoteEditActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.Notesmaster.Edit"
+            android:exported="true">
+
+            <!-- 意图过滤器：允许查看笔记 -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.item/text_note" />
+                <data android:mimeType="vnd.android.cursor.item/call_note" />
+            </intent-filter>
+
+            <!-- 意图过滤器：允许插入或编辑笔记 -->
+            <intent-filter>
+                <action android:name="android.intent.action.INSERT_OR_EDIT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.item/text_note" />
+                <data android:mimeType="vnd.android.cursor.item/call_note" />
+            </intent-filter>
+
+            <!-- 意图过滤器：允许搜索笔记 -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+
+            <!-- 元数据：指定搜索配置文件 -->
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+
+        <!-- ==================== 搜索活动 ==================== -->
+        <activity
+            android:name=".ui.NoteSearchActivity"
+            android:label="@string/search"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.Notesmaster"
+            android:windowSoftInputMode="stateVisible|adjustResize"
+            android:exported="false" />
+
+        <!-- ==================== 待办任务列表活动 ==================== -->
+        <activity
+            android:name=".ui.CapsuleListActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.Notesmaster" />
+
+        <activity
+            android:name=".ui.TaskListActivity"
+            android:label="Tasks"
+            android:theme="@style/Theme.Notesmaster" />
+
+        <!-- ==================== 待办任务编辑活动 ==================== -->
+        <activity
+            android:name=".ui.TaskEditActivity"
+            android:label="Edit Task"
+            android:theme="@style/Theme.Notesmaster"
+            android:windowSoftInputMode="stateVisible|adjustResize" />
+
+        <!-- ==================== 内容提供者 ==================== -->
+        <!-- 提供笔记数据的访问接口，允许其他应用访问笔记数据 -->
+        <provider
+            android:name="net.micode.notes.data.NotesProvider"
+            android:authorities="micode_notes"
+            android:multiprocess="true" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="net.micode.notes.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+
+        <!-- ==================== 桌面小部件接收器 ==================== -->
+        <!-- 2x2大小的笔记桌面小部件 -->
+        <receiver
+            android:name=".widget.NoteWidgetProvider_2x"
+            android:label="@string/app_widget2x2"
+            android:exported="true">
+            <intent-filter>
+                <!-- 小部件更新事件 -->
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <!-- 小部件删除事件 -->
+                <action android:name="android.appwidget.action.APPWIDGET_DELETED" />
+                <!-- 隐私模式变更事件 -->
+                <action android:name="android.intent.action.PRIVACY_MODE_CHANGED" />
+            </intent-filter>
+
+            <!-- 小部件配置信息 -->
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_2x_info" />
+        </receiver>
+        
+        <!-- 4x4大小的笔记桌面小部件 -->
+        <receiver
+            android:name=".widget.NoteWidgetProvider_4x"
+            android:label="@string/app_widget4x4"
+            android:exported="true">
+
+            <intent-filter>
+                <!-- 小部件更新事件 -->
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <!-- 小部件删除事件 -->
+                <action android:name="android.appwidget.action.APPWIDGET_DELETED" />
+                <!-- 隐私模式变更事件 -->
+                <action android:name="android.intent.action.PRIVACY_MODE_CHANGED" />
+            </intent-filter>
+
+            <!-- 小部件配置信息 -->
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_4x_info" />
+        </receiver>
+
+        <!-- ==================== 闹钟初始化接收器 ==================== -->
+        <!-- 系统启动完成后初始化闹钟 -->
+        <receiver android:name=".ui.AlarmInitReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- ==================== 闹钟接收器 ==================== -->
+        <!-- 接收闹钟触发事件，运行在独立进程中 -->
+        <receiver
+            android:name="net.micode.notes.ui.AlarmReceiver"
+            android:process=":remote" >
+        </receiver>
+
+        <!-- ==================== 推送消息接收器 ==================== -->
+        <!-- 接收云端同步通知消息 -->
+        <receiver
+            android:name=".sync.NotesPushMessageReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.alibaba.push2.action.NOTIFICATION_OPENED" />
+                <action android:name="com.alibaba.push2.action.MESSAGE_RECEIVED" />
+            </intent-filter>
+        </receiver>
+
+        <!-- ==================== 闹钟提醒活动 ==================== -->
+        <!-- 显示闹钟提醒界面 -->
+        <activity
+            android:name=".ui.AlarmAlertActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.Notesmaster" >
+        </activity>
+
+        <!-- ==================== 设置活动 ==================== -->
+        <!-- 应用设置界面 -->
+        <activity
+            android:name="net.micode.notes.ui.NotesPreferenceActivity"
+            android:label="@string/preferences_title"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.Notesmaster" >
+        </activity>
+
+        <activity
+            android:name=".ui.SettingsActivity"
+            android:label="@string/menu_settings"
+            android:launchMode="singleTop"
+            android:theme="@style/Theme.Notesmaster"
+            android:exported="false" />
+
+        <!-- ==================== 密码设置/验证活动 ==================== -->
+        <activity
+            android:name=".ui.PasswordActivity"
+            android:label="Password"
+            android:theme="@style/Theme.Notesmaster"
+            android:windowSoftInputMode="stateVisible|adjustResize">
+        </activity>
+
+        <!-- ==================== 登录/注册活动 ==================== -->
+        <activity
+            android:name=".ui.LoginActivity"
+            android:label="登录"
+            android:theme="@style/Theme.Notesmaster"
+            android:exported="false" />
+
+        <!-- ==================== 云同步设置活动 ==================== -->
+        <activity
+            android:name=".ui.SyncActivity"
+            android:label="@string/sync_title"
+            android:theme="@style/Theme.Notesmaster"
+            android:exported="false" />
+
+         <!-- ==================== 同步服务 ==================== -->
+         <!-- Google任务同步服务，用于与Google Tasks同步数据 -->
+         <!-- 暂时禁用同步功能，为未来云同步开发暂留代码 -->
+         <!-- 若需启用，请在build.gradle.kts中移除sourceSets.exclude("**/gtask/**")并添加Apache HttpClient依赖 -->
+         <!--
+         <service
+             android:name="net.micode.notes.gtask.remote.GTaskSyncService"
+             android:exported="false" >
+         </service>
+         -->
+
+        <!-- ==================== 全局速记胶囊动作活动 ==================== -->
+        <!-- 用于系统文本选择菜单集成 -->
+        <activity
+            android:name=".ui.CapsuleActionActivity"
+            android:label="添加到胶囊"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.PROCESS_TEXT" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+
+        <!-- ==================== 全局速记胶囊服务 ==================== -->
+        <service
+            android:name=".capsule.CapsuleService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <service
+            android:name=".capsule.ClipboardMonitorService"
+            android:exported="true"
+            android:label="@string/preferences_capsule_title"
+            android:permission="android.permission.BIND_ACCESSIBILITY_SERVICE">
+            <intent-filter>
+                <action android:name="android.accessibilityservice.AccessibilityService" />
+            </intent-filter>
+            <meta-data
+                android:name="android.accessibilityservice"
+                android:resource="@xml/accessibility_service_config" />
+        </service>
+        <!-- ==================== 阿里云EMAS配置 ==================== -->
+        <meta-data
+            android:name="com.alibaba.app.appkey"
+            android:value="${ALIYUN_APP_KEY}" />
+        <meta-data
+            android:name="com.alibaba.app.appsecret"
+            android:value="${ALIYUN_APP_SECRET}" />
+
+        <!-- ==================== 搜索元数据 ==================== -->
+        <!-- 指定默认的搜索活动为NoteEditActivity -->
+        <meta-data
+            android:name="android.app.default_searchable"
+            android:value=".ui.NoteEditActivity" />
+
+        <!-- 注释掉的MainActivity，当前未使用 -->
+        <!--        <activity-->
+        <!--            android:name=".MainActivity"-->
+        <!--            android:exported="true">-->
+        <!--            <intent-filter>-->
+        <!--                <action android:name="android.intent.action.MAIN" />-->
+
+        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
+        <!--            </intent-filter>-->
+        <!--        </activity>-->
+
+    </application>
+
+</manifest>
